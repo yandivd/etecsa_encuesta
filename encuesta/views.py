@@ -80,7 +80,7 @@ def ResumenDT(request):
             "porcR": porcR,
             "porcM": porcM,
             "porcMM": porcMM,
-            "show": plt.show(),
+            "show": plt.savefig('encuesta/static/encuesta/GDT.png'),
     }
 
     return render(request, 'dt.html',data)
