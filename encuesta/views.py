@@ -3,6 +3,7 @@ from django.views.generic import CreateView
 from .models import Encuesta
 from .forms import EncuestasForm
 from django.urls import reverse_lazy
+import matplotlib.pyplot as plt
 
 # Create your views here.
 def home(request):
@@ -59,7 +60,11 @@ def ResumenDT(request):
 
     #porciento MM
     porcMM=(DTcantMM*100)/total
-
+    ###GRAFICANDO#####
+    calif=['MB','B','R','M','MM']
+    cant=[DTcantMB, DTcantB, DTcantR, DTcantM, DTcantMM]
+    colores = ['lightgreen','yellow','#FFA500','red','black']
+    plt.pie(cant, labels=calif, colors=colores)
 
 
     data={ 
@@ -73,7 +78,7 @@ def ResumenDT(request):
             "porcR": porcR,
             "porcM": porcM,
             "porcMM": porcMM,
-
+            "show": plt.show(),
     }
 
     return render(request, 'dt.html',data)
