@@ -63,8 +63,10 @@ def ResumenDT(request):
     ###GRAFICANDO#####
     calif=['MB','B','R','M','MM']
     cant=[DTcantMB, DTcantB, DTcantR, DTcantM, DTcantMM]
-    colores = ['lightgreen','yellow','#FFA500','red','black']
-    plt.pie(cant, labels=calif, colors=colores)
+    colores = ['lightgreen','yellow','#FFA500','red','sienna']
+    desface=(0.1,0,0,0,0)
+    plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
+    plt.title('Direccion Territorial')
 
 
     data={ 
