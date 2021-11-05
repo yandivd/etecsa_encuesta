@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
+
+
+    <div><p></p></div>
+
+
+  <main class="px-3">
+    <h1>Bienvenido a nuestra encuesta.</h1>
+    <p class="lead">Estimado cliente, para mejorar continuamente nuestro trabajo, necesitamos nos de a conocer su criterio
+    respecto a la limpieza de nuestros locales, la misma es confidencial</p>
+
+  </main>
+
+</div>
+<a href="{% url 'Encuesta' %}"><input type="button" value="Empezar" class="btn btn-lg btn-secundary fw-bold border-white bg-white"></a>
+{%endblock%}

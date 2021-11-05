@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <h1>Valoraciones del Area de Logistica y Servicios Chalet</h1>
+    <hr>
+    <h2>Muy Bien: {{ALSCcantMB}} </h2>
+    <h3>Porcentaje: {{porcMB}}%</h3>
+    <hr>
+    <h2>Bien: {{ALSCcantB}}</h2>
+    <h3>Porcentaje: {{porcB}}%</h3>
+    <hr>
+    <h2>Regular: {{ALSCcantR}}</h2>
+    <h3>Porcentaje: {{porcR}}%</h3>
+    <hr>
+    <h2>Mal: {{ALSCcantM}}</h2>
+    <h3>Porcentaje: {{porcM}}%</h3>
+    <hr>
+    <h2>Muy Mal: {{ALSCcantMM}}</h2>
+    <h3>Porcentaje: {{porcMM}}%</h3>
+
+    <p><hr></p>
+    <a href="{% url 'Resultados' %}">
+        <input type="button" value="Atras" class="btn btn-lg btn-secundary fw-bold border-white bg-white">
+    </a>
+
+
+{% endblock %}

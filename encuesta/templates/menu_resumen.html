@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Resultados de las Encuestas</h1>
+    <hr>
+    <ul>
+        <h2><li><a href="{% url 'DT' %}">Direccion Territorial</a></li></h2>
+        <h2><li><a href="{% url 'CTA' %}">Centro de Telecomunicaciones Artemisa</a></li></h2>
+        <h2><li><a href="{% url 'T' %}">Telepunto</a></li></h2>
+        <h2><li><a href="{% url 'TT' %}">Taller de Telefonos</a></li></h2>
+        <h2><li><a href="{% url 'ALSC' %}">Area de Logistica y Servicios Chalet</a></li></h2>
+        <h2><li><a href="{% url 'UO' %}">Unidad Operativa</a></li></h2>
+    </ul>
+
+{% endblock %}

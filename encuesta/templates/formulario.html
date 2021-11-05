@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{% load static %}
+{%block content%}
+<div class="row justify-content-center">
+<form action="" method="post">
+    {%csrf_token%}
+
+    <label for="">Area?</label>
+    <p></p>
+    {{form.area}}
+    <p><hr></p>
+
+    <label for="">Como valora la limpieza de su area?</label>
+    <p></p>
+    {{form.limpieza_val}}
+    <p><hr></p>
+
+    <label for="">Cuando limpian su area tambien sacuden el polvo de los buroes, pc, etc...?</label>
+    <p></p>
+    {{form.sac_polvo}}
+    <p><hr></p>
+
+    <label for="">Como valora la limpieza de los bannos y las areas comunes?</label>
+    <p></p>
+    {{form.limpieza_bannos}}
+    <p><hr></p>
+
+    <label for="">De manera general como valora el servicio de limpieza?</label>
+    <p></p>
+    {{form.servicio_limpieza}}
+    <p><hr></p>
+    <input type="submit" value="Terminar" name="_save">
+    <!---<input type="hidden" name="next" value="{{ next }}" />--->
+</form>
+</div>
+
+{%endblock%}

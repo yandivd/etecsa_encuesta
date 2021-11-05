@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Telepunto</h1>
+<div><p>
+    <hr>
+</p></div>
+<form action="" method="post">
+        <label for="">Como valora la limpieza de su area?</label>
+        <select name="Calidad" id="Calidad">
+        <option value="MB">Muy Bien</option>
+        <option value="B">Bien</option>
+        <option value="R">Regular</option>
+        <option value="M">Mal</option>
+        <option value="MM">Muy Mal</option>
+    </select>
+
+    <div><p>
+        <hr>
+    </p></div>
+
+        <label for="">Cuando limpian su area tambien sacuden el polvo de los buroes, pc, etc...?</label>
+        <select name="Calidad" id="Calidad">
+        <option value="S">Si</option>
+        <option value="N">No</option>
+    </select>
+
+    <div><p>
+        <hr>
+    </p></div>
+
+        <label for="">Como valora la limpieza de los banos y areas comunes?</label>
+        <select name="Calidad" id="Calidad">
+        <option value="MB">Muy Bien</option>
+        <option value="B">Bien</option>
+        <option value="R">Regular</option>
+        <option value="M">Mal</option>
+        <option value="MM">Muy Mal</option>
+    </select>
+
+    <div><p>
+        <hr>
+    </p></div>
+
+        <label for="">De manera general como valora el servicio de limpieza?</label>
+        <select name="Calidad" id="Calidad">
+        <option value="MB">Muy Bien</option>
+        <option value="B">Bien</option>
+        <option value="R">Regular</option>
+        <option value="M">Mal</option>
+        <option value="MM">Muy Mal</option>
+    </select>
+    <div>
+        <p><hr></p>
+    </div>
+    <a href="{% url 'Final' %}"><input type="button" value="Siguiente"></a>
+
+</form>
+{% endblock %}
