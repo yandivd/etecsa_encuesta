@@ -131,7 +131,7 @@ def ResumenCTA(request):
     colores = ['lightgreen','yellow','#FFA500','red','sienna']
     desface=(0.1,0,0,0,0)
     plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
-    plt.title('Direccion Territorial')
+    plt.title('Centro de Telecomunicaciones Artemisa')
 
     data={
 
@@ -195,7 +195,7 @@ def ResumenT(request):
     colores = ['lightgreen','yellow','#FFA500','red','sienna']
     desface=(0.1,0,0,0,0)
     plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
-    plt.title('Direccion Territorial')
+    plt.title('Telepunto')
 
     data={
 
@@ -254,6 +254,13 @@ def ResumenTT(request):
     #porciento MM
     porcMM=(TTcantMM*100)/total
 
+    calif=['MB','B','R','M','MM']
+    cant=[TTcantMB, TTcantB, TTcantR, TTcantM, TTcantMM]
+    colores = ['lightgreen','yellow','#FFA500','red','sienna']
+    desface=(0.1,0,0,0,0)
+    plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
+    plt.title('Taller de Telefonos')
+
     data={
 
             "TTcantMB":TTcantMB,
@@ -266,6 +273,8 @@ def ResumenTT(request):
             "porcR": porcR,
             "porcM": porcM,
             "porcMM": porcMM,
+            "show": plt.savefig('encuesta/static/encuesta/GTT.png'),
+            "del": plt.close()
             }
 
     return render(request, 'taller_telf.html', data)  
