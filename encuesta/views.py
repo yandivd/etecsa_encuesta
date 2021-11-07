@@ -190,6 +190,13 @@ def ResumenT(request):
     #porciento MM
     porcMM=(TcantMM*100)/total
 
+    calif=['MB','B','R','M','MM']
+    cant=[TcantMB, TcantB, TcantR, TcantM, TcantMM]
+    colores = ['lightgreen','yellow','#FFA500','red','sienna']
+    desface=(0.1,0,0,0,0)
+    plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
+    plt.title('Direccion Territorial')
+
     data={
 
             "TcantMB":TcantMB,
@@ -202,6 +209,8 @@ def ResumenT(request):
             "porcR": porcR,
             "porcM": porcM,
             "porcMM": porcMM,
+            "show": plt.savefig('encuesta/static/encuesta/GT.png'),
+            "del": plt.close()
             }
 
     return render(request, 'tel.html', data)   
