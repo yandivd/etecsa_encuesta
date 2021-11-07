@@ -318,6 +318,13 @@ def ResumenALSC(request):
     #porciento MM
     porcMM=(ALSCcantMM*100)/total
 
+    calif=['MB','B','R','M','MM']
+    cant=[ALSCcantMB, ALSCcantB, ALSCcantR, ALSCcantM, ALSCcantMM]
+    colores = ['lightgreen','yellow','#FFA500','red','sienna']
+    desface=(0.1,0,0,0,0)
+    plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
+    plt.title('Area de Logistica y Servicios Chalet')
+
     data={
 
             "ALSCcantMB":ALSCcantMB,
@@ -330,6 +337,8 @@ def ResumenALSC(request):
             "porcR": porcR,
             "porcM": porcM,
             "porcMM": porcMM,
+            "show": plt.savefig('encuesta/static/encuesta/GALSC.png'),
+            "del": plt.close()
             }
 
     return render(request, 'chalet.html', data)
