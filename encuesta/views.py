@@ -382,6 +382,13 @@ def ResumenUO(request):
     #porciento MM
     porcMM=(UOcantMM*100)/total
 
+    calif=['MB','B','R','M','MM']
+    cant=[UOcantMB, UOcantB, UOcantR, UOcantM, UOcantMM]
+    colores = ['lightgreen','yellow','#FFA500','red','sienna']
+    desface=(0.1,0,0,0,0)
+    plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
+    plt.title('Unidad Operativa')
+
     data={
 
             "UOcantMB":UOcantMB,
@@ -394,6 +401,8 @@ def ResumenUO(request):
             "porcR": porcR,
             "porcM": porcM,
             "porcMM": porcMM,
+            "show": plt.savefig('encuesta/static/encuesta/GUO.png'),
+            "del": plt.close()
             }
 
     return render(request, 'unidad_operativa.html', data)
