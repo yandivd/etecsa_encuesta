@@ -125,6 +125,14 @@ def ResumenCTA(request):
     #porciento MM
     porcMM=(CTAcantMM*100)/total
 
+        ###GRAFICANDO#####
+    calif=['MB','B','R','M','MM']
+    cant=[CTAcantMB, CTAcantB, CTAcantR, CTAcantM, CTAcantMM]
+    colores = ['lightgreen','yellow','#FFA500','red','sienna']
+    desface=(0.1,0,0,0,0)
+    plt.pie(cant, labels=calif, colors=colores,autopct='%1.2f%%', explode=desface)
+    plt.title('Direccion Territorial')
+
     data={
 
             "CTAcantMB":CTAcantMB,
@@ -137,6 +145,8 @@ def ResumenCTA(request):
             "porcR": porcR,
             "porcM": porcM,
             "porcMM": porcMM,
+            "show": plt.savefig('encuesta/static/encuesta/GCTA.png'),
+            "del": plt.close()
             }
 
     return render(request, 'cta.html', data)
