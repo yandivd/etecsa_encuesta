@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView
-from .models import Encuesta
+from .models import Encuesta, Area_Organizativa
 from .forms import EncuestasForm
 from django.urls import reverse_lazy
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ class EncuestaCreateView(CreateView):
     success_url=reverse_lazy('Final')
 
 def ResumenDT(request):
-    encuestasDT=Encuesta.objects.filter(area__name__exact='Direccion Territorial')
+    encuestasDT=Encuesta.objects.filter(area__nombre='Direccion Territorial')
     ###Direccion Territorial###
     DTcantMB=0
     DTcantB=0
@@ -92,7 +92,7 @@ def ResumenDT(request):
     return render(request, 'dt.html',data)
 
 def ResumenCTA(request):
-    encuestasCTA=Encuesta.objects.filter(area__exact='CTA')
+    encuestasCTA=Encuesta.objects.filter(area__nombre='Centro de Telecomunicaciones Artemisa')
     ###Centro Telefonico Artemisa###
     CTAcantMB=0
     CTAcantB=0
@@ -157,7 +157,7 @@ def ResumenCTA(request):
     return render(request, 'cta.html', data)
 
 def ResumenT(request):
-    encuestasT=Encuesta.objects.filter(area__exact='T')
+    encuestasT=Encuesta.objects.filter(area__nombre='Telepunto')
     ###Telepunto#
     TcantMB=0
     TcantB=0
@@ -221,7 +221,7 @@ def ResumenT(request):
     return render(request, 'tel.html', data)   
 
 def ResumenTT(request):
-    encuestasTT=Encuesta.objects.filter(area__exact='TT')
+    encuestasTT=Encuesta.objects.filter(area__nombre='Taller de Telefonos')
     ###Teller telefonos###
     TTcantMB=0
     TTcantB=0
@@ -285,7 +285,7 @@ def ResumenTT(request):
     return render(request, 'taller_telf.html', data)  
 
 def ResumenALSC(request):
-    encuestasALSC=Encuesta.objects.filter(area__exact='ALSC')
+    encuestasALSC=Encuesta.objects.filter(area__nombre='Area de Logistica y Servicios Chalet')
     ###Chalet###
     ALSCcantMB=0
     ALSCcantB=0
@@ -349,7 +349,7 @@ def ResumenALSC(request):
     return render(request, 'chalet.html', data)
 
 def ResumenUO(request):
-    encuestasUO=Encuesta.objects.filter(area__exact='UO')
+    encuestasUO=Encuesta.objects.filter(area__exact='Unidad Operativa')
     ###Unidad operativa###
     UOcantMB=0
     UOcantB=0
