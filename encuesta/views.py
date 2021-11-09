@@ -22,13 +22,18 @@ class EncuestaCreateView(CreateView):
     success_url=reverse_lazy('Final')
 
 def ResumenDT(request):
-    encuestasDT=Encuesta.objects.filter(area__exact='DT')
+    encuestasDT=Encuesta.objects.filter(area__name__exact='Direccion Territorial')
     ###Direccion Territorial###
     DTcantMB=0
     DTcantB=0
     DTcantR=0
     DTcantM=0
     DTcantMM=0
+    #todo=Encuesta.objects.all()
+    #encuestasDT=[]
+    #for i in todo:
+    #    if i.area.nombre=="Direccion Territorial":
+    #        encuestasDT.append(i)
     
 
 ##Direccion Territorial

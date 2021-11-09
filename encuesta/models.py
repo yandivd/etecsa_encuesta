@@ -1,4 +1,11 @@
 from django.db import models
+from datetime import datetime
+
+class Area_Organizativa(models.Model):
+    nombre=models.CharField(max_length=150, unique=True)
+
+    def __str__(self):
+        return self.nombre
 
 class Encuesta(models.Model):
 
@@ -17,15 +24,6 @@ class Encuesta(models.Model):
     ALSC='ALSC'
     UO='UO'
 
-    AREA_ORGANIZATIVA_CHOICE=(
-        (DT, 'Direccion Territorial'),
-        (CTA, 'Centro de Telecomunicaciones Artemisa'),
-        (T, 'Telepunto'),
-        (TT, 'Taller de Telefonos'),
-        (ALSC, 'Area de Logistica y Servicios Chalet'),
-        (UO, 'Unidad Operativa'),
-    )
-
     LIMPIEZA_CHOICES = (
         (MuyBien, 'Muy Bien'),
         (Bien, 'Bien'),
@@ -39,8 +37,8 @@ class Encuesta(models.Model):
         (No, 'No')
     )
 
-    #area= models.ForeignKey(Area_Organizativa, on_delete=models.CASCADE)
-    area=models.CharField(max_length=50, choices=AREA_ORGANIZATIVA_CHOICE)
+    area= models.ForeignKey(Area_Organizativa, on_delete=models.CASCADE)
+    #area=models.CharField(max_length=50, choices=AREA_ORGANIZATIVA_CHOICE)
 
     limpieza_val = models.CharField(max_length=50, choices=LIMPIEZA_CHOICES, default=MuyBien)
 
@@ -49,6 +47,8 @@ class Encuesta(models.Model):
     limpieza_bannos=models.CharField(max_length=50, choices=LIMPIEZA_CHOICES, default=MuyBien)
 
     servicio_limpieza=models.CharField(max_length=50, choices=LIMPIEZA_CHOICES, default=MuyBien)
+
+    fecha_hora=models.DateTimeField(auto_now=True)
 
     #def __str__(self):
     #    return str(id)
