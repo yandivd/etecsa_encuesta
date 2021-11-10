@@ -415,3 +415,6 @@ def ResumenUO(request):
 def Resumen(request):
     return render(request, 'menu_resumen.html')
 
+def Login(request):
+    return render(request, 'registration/login.html')
+
