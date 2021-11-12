@@ -4,6 +4,7 @@ from .models import Encuesta, Area_Organizativa
 from .forms import EncuestasForm
 from django.urls import reverse_lazy
 import matplotlib.pyplot as plt
+from django.contrib.auth.models import User
 
 # Create your views here.
 def home(request):
@@ -86,7 +87,7 @@ def ResumenDT(request):
             "porcM": porcM,
             "porcMM": porcMM,
             "show": plt.savefig('encuesta/static/encuesta/GDT.png'),
-            "del": plt.close()
+            "del": plt.close(),
     }
 
     return render(request, 'dt.html',data)
