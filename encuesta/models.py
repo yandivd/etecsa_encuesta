@@ -36,6 +36,7 @@ class Encuesta(models.Model):
         (Yes, 'Si'),
         (No, 'No')
     )
+    
 
     area= models.ForeignKey(Area_Organizativa, on_delete=models.CASCADE)
     #area=models.CharField(max_length=50, choices=AREA_ORGANIZATIVA_CHOICE)
