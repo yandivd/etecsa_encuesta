@@ -152,7 +152,8 @@ def ResumenCTA(request):
             "porcM": porcM,
             "porcMM": porcMM,
             "show": plt.savefig('encuesta/static/encuesta/GCTA.png'),
-            "del": plt.close()
+            "del": plt.close(),
+            "usuario": request.user,
             }
 
     return render(request, 'cta.html', data)
