@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'etecsa_encuesta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.path.join('etecsa_encuestas'),
+        'NAME': os.path.join('encuesta_etecsa'),
         'USER': 'postgres',
         'PASSWORD': 'Seguimos/25',
         'HOST': 'localhost',
